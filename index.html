@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="src/css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Script -->
@@ -44,47 +44,54 @@
           <img src="" alt="Bandeira do país" id="country" />
         </h2>
 
-        <p id="temperature"><span>38</span>&deg;C</p>
+        <div id="infos">
+          <div id="temp">
+            <img id="temp_img" src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
 
-        <div id="description-container">
-          <p id="description">Nublado</p>
-          <img src="" alt="Condições do tempo" id="weather-icon" />
+            <p id="temperature"><span>38</span>&deg;C</p>
+
+            <div id="description-container">
+              <p id="description">Nublado</p>
+              <img src="" alt="Condições do tempo" id="weather-icon" />
+            </div>
+          </div>
+
+          <div id="details-container">
+            <div class="info">
+              <h2>Temp. máx</h2>
+              <p id="temp_max">
+                <i class="fa-solid fa-temperature-high icon"></i>
+                <span>40</span>&deg;C
+              </p>
+            </div>
+
+            <div class="info">
+              <h2>Temp. mín</h2>
+              <p id="temp_min">
+                <i class="fa-solid fa-temperature-low icon"></i>
+                <span>20</span>&deg;C
+              </p>
+            </div>
+
+            <div class="info">
+              <h2>Umidade</h2>
+              <p id="humidity">
+                <i class="fa-solid fa-droplet icon"></i>
+                <span>48%</span>
+              </p>
+            </div>
+
+            <div class="info">
+              <h2>Vel. vento</h2>
+              <p id="wind">
+                <i class="fa-solid fa-wind icon"></i>
+                <span>3km/h</span>
+              </p>
+            </div>
+          </div>
         </div>
-
-        <div id="details-container">
-          <div>
-            <h2>Temp. máx</h2>
-            <p id="temp_max">
-              <i class="fa-solid fa-temperature-high icon"></i>
-              <span>40</span>&deg;C
-            </p>
-          </div>
-
-          <div>
-            <h2>Temp. mín</h2>
-            <p id="temp_min">
-              <i class="fa-solid fa-temperature-low icon"></i>
-              <span>20</span>&deg;C
-            </p>
-          </div>
-
-          <div>
-            <h2>Umidade</h2>
-            <p id="humidity">
-              <i class="fa-solid fa-droplet icon"></i>
-              <span>48%</span>
-            </p>
-          </div>
-
-          <div>
-            <h2>Vel. vento</h2>
-            <p id="wind">
-              <i class="fa-solid fa-wind icon"></i>
-              <span>3km/h</span>
-            </p>
-          </div>
-        </div>
-      </section>
+    </div>
+    </section>
     </div>
   </main>
 </body>
