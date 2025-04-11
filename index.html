@@ -18,13 +18,11 @@
 </head>
 
 <body>
-  <header>
-    <h1>TempoAgora</h1>
-  </header>
-
   <main>
     <div class="container">
-
+      <header>
+        <h1>TempoAgora</h1>
+      </header>
       <section class="form-section">
         <h3>Confira o clima de uma cidade:</h3>
         <form id="weather-form">
@@ -37,56 +35,69 @@
         </form>
       </section>
 
-      <section id="weather-data">
+      <section id="weather-data" class="">
         <h2>
           <i class="fa-solid fa-location-dot"></i>
           <span id="city">Patos</span>
-          <img src="" alt="Bandeira do país" id="country" />
+          <img src="https://flagcdn.com/w40/br.png" alt="Bandeira do país" id="country" />
         </h2>
 
         <div id="infos">
           <div id="temp">
-            <img id="temp_img" src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
-
-            <p id="temperature"><span>38</span>&deg;C</p>
-
-            <div id="description-container">
+            <img id="temp_img" src="http://openweathermap.org/img/wn/04d@2x.png" alt="Condições do tempo">
+            <div>
+              <p id="temperature"><span>38</span>&deg;C</p>
               <p id="description">Nublado</p>
-              <img src="" alt="Condições do tempo" id="weather-icon" />
             </div>
           </div>
 
           <div id="details-container">
             <div class="info">
-              <h2>Temp. máx</h2>
-              <p id="temp_max">
-                <i class="fa-solid fa-temperature-high icon"></i>
-                <span>40</span>&deg;C
-              </p>
+              <i id="temp_max_icon" class="fa-solid fa-temperature-high"></i>
+
+              <div>
+                <h2>Temp. max</h2>
+
+                <p id="temp_max">
+                  32 <sup>C°</sup>
+                </p>
+              </div>
             </div>
 
             <div class="info">
-              <h2>Temp. mín</h2>
-              <p id="temp_min">
-                <i class="fa-solid fa-temperature-low icon"></i>
-                <span>20</span>&deg;C
-              </p>
+              <i id="temp_min_icon" class="fa-solid fa-temperature-low"></i>
+
+              <div>
+                <h2>Temp. min</h2>
+
+                <p id="temp_min">
+                  12 <sup>C°</sup>
+                </p>
+              </div>
             </div>
 
             <div class="info">
-              <h2>Umidade</h2>
-              <p id="humidity">
-                <i class="fa-solid fa-droplet icon"></i>
-                <span>48%</span>
-              </p>
+              <i id="humidity_icon" class="fa-solid fa-droplet"></i>
+
+              <div>
+                <h2>Humidade</h2>
+
+                <p id="humidity">
+                  50%
+                </p>
+              </div>
             </div>
 
             <div class="info">
-              <h2>Vel. vento</h2>
-              <p id="wind">
-                <i class="fa-solid fa-wind icon"></i>
-                <span>3km/h</span>
-              </p>
+              <i id="wind_icon" class="fa-solid fa-wind"></i>
+
+              <div>
+                <h2>Vento</h2>
+
+                <p id="wind">
+                  50 km/h
+                </p>
+              </div>
             </div>
           </div>
         </div>
