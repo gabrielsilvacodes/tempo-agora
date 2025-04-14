@@ -24,7 +24,6 @@
         </button>
       </header>
 
-
       <!-- Formulário de busca -->
       <section class="form-section">
         <label for="city-input">Confira o clima de uma cidade:</label>
@@ -69,7 +68,7 @@
             <div class="info">
               <i id="temp_max_icon" class="fa-solid fa-temperature-high"></i>
               <div>
-                <h2>Temp. max</h2>
+                <p class="label">Temp. max</p>
                 <p id="temp_max">--</p>
               </div>
             </div>
@@ -77,7 +76,7 @@
             <div class="info">
               <i id="temp_min_icon" class="fa-solid fa-temperature-low"></i>
               <div>
-                <h2>Temp. min</h2>
+                <p class="label">Temp. min</p>
                 <p id="temp_min">--</p>
               </div>
             </div>
@@ -85,7 +84,7 @@
             <div class="info">
               <i id="humidity_icon" class="fa-solid fa-droplet"></i>
               <div>
-                <h2>Humidade</h2>
+                <p class="label">Humidade</p>
                 <p id="humidity">--</p>
               </div>
             </div>
@@ -93,23 +92,23 @@
             <div class="info">
               <i id="wind_icon" class="fa-solid fa-wind"></i>
               <div>
-                <h2>Vento</h2>
+                <p class="label">Vento</p>
                 <p id="wind">--</p>
               </div>
             </div>
           </div>
 
-          <p id="updated-time" class="updated-time hide">Última atualização: --</p>
+          <p id="updated-time" class="updated-time hide" aria-live="polite">Última atualização: --</p>
         </div>
       </section>
 
       <!-- Sugestões de cidades -->
       <div id="suggestions">
-        <button id="patos">Patos</button>
-        <button id="são paulo">São Paulo</button>
-        <button id="lisboa">Lisboa</button>
-        <button id="vancouver">Vancouver</button>
-        <button id="osaka">Osaka</button>
+        <button type="button" id="patos">Patos</button>
+        <button type="button" id="são paulo" lang="pt">São Paulo</button>
+        <button type="button" id="lisboa">Lisboa</button>
+        <button type="button" id="vancouver">Vancouver</button>
+        <button type="button" id="osaka">Osaka</button>
       </div>
     </div>
   </main>

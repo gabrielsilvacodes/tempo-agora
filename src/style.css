@@ -17,6 +17,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 20px;
   background: linear-gradient(180deg, #5974ee, #8dd0f5),
     url("/fallback.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -24,15 +25,14 @@ body {
   background-position: center;
   background-attachment: fixed;
   transition: background-image 0.5s ease-in-out;
-  padding: 20px;
 }
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25); /* leve escurecimento */
-  backdrop-filter: blur(3px); /* blur sutil */
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
   z-index: -1;
 }
 
@@ -40,24 +40,25 @@ body::before {
   display: none !important;
 }
 
+/* ===== Container ===== */
 .container {
   background-color: rgba(255, 255, 255, 0.88);
   border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
   max-width: 500px;
   width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 }
 
 /* ===== Título ===== */
-
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
 }
+
 header h1 {
   text-align: center;
   font-size: 1.9rem;
@@ -80,9 +81,9 @@ h3 {
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 6px 12px;
   border: 1px solid #bdbdbd;
   border-radius: 10px;
-  padding: 6px 12px;
   background-color: #fff;
 }
 
@@ -102,12 +103,12 @@ h3 {
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  transition: 0.2s;
 }
 
 .form-input-container button:hover {
   color: #000;
   transform: scale(1.1);
-  transition: 0.2s;
 }
 
 /* ===== Loader animado ===== */
@@ -133,11 +134,11 @@ h3 {
   background-color: #fee2e2;
   color: #b91c1c;
   padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
   margin-top: 1rem;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
   font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== Sugestões de cidades ===== */
@@ -150,14 +151,14 @@ h3 {
 }
 
 #suggestions button {
-  background-color: #5c6bc0;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: #fff;
+  background-color: #5c6bc0;
   border: none;
   border-radius: 20px;
-  padding: 0.6rem 1.2rem;
   cursor: pointer;
-  font-weight: 500;
-  font-size: 0.9rem;
   transition: background-color 0.3s ease;
 }
 
@@ -198,11 +199,11 @@ h3 {
   align-items: center;
   justify-content: space-around;
   gap: 20px;
-  background: linear-gradient(90deg, #5a7cdc, #606dde);
-  color: #fff;
-  border-radius: 20px;
   padding: 20px;
   margin-top: 10px;
+  border-radius: 20px;
+  color: #fff;
+  background: linear-gradient(90deg, #5a7cdc, #606dde);
 }
 
 #temp_img {
@@ -234,22 +235,29 @@ h3 {
   justify-content: start;
   padding: 4px 10px;
   border-radius: 8px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
   gap: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-#details-container .info h2 {
+#details-container .info .label {
   font-size: 12px;
   font-weight: 600;
+  color: #444;
+}
+
+#details-container .info p {
+  font-size: 0.9rem;
+  margin: 2px 0 0;
 }
 
 #details-container .info i {
-  text-align: center;
   font-size: 20px;
   width: 20%;
+  text-align: center;
 }
 
+/* ===== Atualização ===== */
 .updated-time {
   text-align: center;
   font-size: 0.9rem;
@@ -257,14 +265,15 @@ h3 {
   margin-top: 15px;
 }
 
+/* ===== Botão de tema ===== */
 #toggle-theme {
-  background: rgba(0, 0, 0, 0.05);
   padding: 6px;
-  border-radius: 50%;
-  border: none;
   font-size: 1.3rem;
   cursor: pointer;
+  border: none;
+  border-radius: 50%;
   color: #333;
+  background: rgba(0, 0, 0, 0.05);
   transition: background 0.3s, transform 0.2s;
 }
 
@@ -273,24 +282,21 @@ h3 {
   transform: scale(1.1);
 }
 
-/* ===== Cores dos ícones de detalhe ===== */
+/* ===== Cores dos ícones ===== */
 #temp_max_icon {
   color: #7f1d1d;
 }
-
 #temp_min_icon {
   color: #0284c7;
 }
-
 #humidity_icon {
   color: #0ea5e9;
 }
-
 #wind_icon {
   color: #7c3aed;
 }
 
-/* ===== Tema Escuro Manual (body.dark) ===== */
+/* ===== Tema Escuro Manual ===== */
 body.dark {
   background-image: none;
   background-color: #1c1c2e;
@@ -326,7 +332,8 @@ body.dark #details-container .info {
   background-color: #2e2e3e;
   color: #fff;
 }
-body.dark #details-container .info h2,
+
+body.dark #details-container .info .label,
 body.dark #details-container .info p {
   color: #fff;
 }
@@ -356,18 +363,81 @@ body.dark #toggle-theme {
 body.dark #toggle-theme:hover {
   background: rgba(255, 255, 255, 0.15);
 }
-/* ===== Responsivo leve ===== */
+
+/* ===== Responsivo: Telas Pequenas (até 500px) ===== */
 @media (max-width: 500px) {
+  .container {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-input-container {
+    gap: 6px;
+  }
+
   #temp {
     flex-direction: column;
     gap: 12px;
+    padding: 16px;
   }
 
   #temperature {
-    font-size: 40px;
+    font-size: 38px;
+    line-height: 42px;
   }
 
+  #description {
+    font-size: 0.95rem;
+  }
+
+  #details-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  #details-container .info h2 {
+    font-size: 0.9rem;
+  }
+
+  #details-container .info i {
+    font-size: 18px;
+  }
+
+  #suggestions button {
+    flex: 1 1 auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  #loader i {
+    font-size: 1.5rem;
+  }
+
+  #updated-time {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== Responsivo: Telas Médias (até 768px) ===== */
+@media (max-width: 768px) {
   .container {
-    padding: 16px;
+    max-width: 90vw;
+  }
+
+  #temperature {
+    font-size: 45px;
+  }
+
+  #details-container .info i {
+    font-size: 18px;
+  }
+
+  #weather-data span {
+    font-size: 0.95rem;
   }
 }
