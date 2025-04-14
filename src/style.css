@@ -51,6 +51,13 @@ body::before {
 }
 
 /* ===== Título ===== */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
 header h1 {
   text-align: center;
   font-size: 1.9rem;
@@ -243,6 +250,29 @@ h3 {
   width: 20%;
 }
 
+.updated-time {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 15px;
+}
+
+#toggle-theme {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 6px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#toggle-theme:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
 /* ===== Cores dos ícones de detalhe ===== */
 #temp_max_icon {
   color: #7f1d1d;
@@ -260,6 +290,72 @@ h3 {
   color: #7c3aed;
 }
 
+/* ===== Tema Escuro Manual (body.dark) ===== */
+body.dark {
+  background-image: none;
+  background-color: #1c1c2e;
+}
+
+body.dark::before {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+body.dark .container {
+  background-color: rgba(30, 30, 40, 0.92);
+  color: #eaeaea;
+}
+
+body.dark header h1,
+body.dark label,
+body.dark #weather-data h2,
+body.dark .updated-time {
+  color: #eaeaea;
+}
+
+body.dark .form-input-container {
+  background-color: #2e2e40;
+  border-color: #555;
+}
+
+body.dark .form-input-container input {
+  color: #fff;
+}
+
+body.dark #details-container .info {
+  background-color: #2e2e3e;
+  color: #fff;
+}
+body.dark #details-container .info h2,
+body.dark #details-container .info p {
+  color: #fff;
+}
+
+body.dark #suggestions button {
+  background-color: #6a5acd;
+}
+
+body.dark #suggestions button:hover {
+  background-color: #7c6ee0;
+}
+
+body.dark #error-message {
+  background-color: #4c1c1c;
+  color: #fdd;
+}
+
+body.dark #loader i {
+  color: #fff;
+}
+
+body.dark #toggle-theme {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1f1f1;
+}
+
+body.dark #toggle-theme:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
 /* ===== Responsivo leve ===== */
 @media (max-width: 500px) {
   #temp {

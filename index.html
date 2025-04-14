@@ -17,13 +17,17 @@
 <body>
   <main>
     <div class="container">
-      <header>
+      <header class="header">
         <h1>TempoAgora</h1>
+        <button id="toggle-theme" aria-label="Alternar modo claro/escuro" title="Alternar tema">
+          <i class="fa-solid fa-moon"></i>
+        </button>
       </header>
+
 
       <!-- Formulário de busca -->
       <section class="form-section">
-        <h3>Confira o clima de uma cidade:</h3>
+        <label for="city-input">Confira o clima de uma cidade:</label>
         <form id="weather-form">
           <div class="form-input-container">
             <input type="text" id="city-input" placeholder="Digite o nome da cidade" required />
@@ -94,6 +98,8 @@
               </div>
             </div>
           </div>
+
+          <p id="updated-time" class="updated-time hide">Última atualização: --</p>
         </div>
       </section>
 

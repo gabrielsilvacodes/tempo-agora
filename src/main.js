@@ -18,6 +18,7 @@ const tempMaxElement = document.querySelector("#temp_max");
 const tempMinElement = document.querySelector("#temp_min");
 const humidityElement = document.querySelector("#humidity");
 const windElement = document.querySelector("#wind");
+const updatedTimeElement = document.querySelector("#updated-time");
 
 const weatherContainer = document.querySelector("#weather-data");
 const errorMessageContainer = document.querySelector("#error-message");
@@ -26,15 +27,19 @@ const loader = document.querySelector("#loader");
 const suggestionContainer = document.querySelector("#suggestions");
 const suggestionButtons = document.querySelectorAll("#suggestions button");
 
+const themeToggleBtn = document.querySelector("#toggle-theme");
+
 // Funções utilitárias
 const showLoader = () => loader.classList.remove("hide");
 const hideLoader = () => loader.classList.add("hide");
 const showSuggestions = () => suggestionContainer.classList.remove("hide");
 const hideSuggestions = () => suggestionContainer.classList.add("hide");
+
 const showAlert = (msg) => {
   errorMessageContainer.innerHTML = `<p>${msg}</p>`;
   errorMessageContainer.classList.remove("hide");
 };
+
 const hideErrorMessage = () => errorMessageContainer.classList.add("hide");
 const hideWeatherData = () => weatherContainer.classList.add("hide");
 const showWeatherDataContainer = () =>
@@ -119,6 +124,9 @@ const showWeatherData = async (city) => {
   const cityImage = await getCityImage(normalized);
   document.body.style.backgroundImage = `url("${cityImage}")`;
 
+  updatedTimeElement.innerText = `Última atualização: ${getFormattedDateTime()}`;
+  updatedTimeElement.classList.remove("hide");
+
   showWeatherDataContainer();
 };
 
@@ -128,6 +136,46 @@ const handleSearch = () => {
     showWeatherData(city);
     cityInput.value = "";
   }
+};
+
+const getFormattedDateTime = () => {
+  const now = new Date();
+  return now.toLocaleString("pt-BR", {
+    dateStyle: "short",
+    timeStyle: "short",
+  });
+};
+
+const loadThemePreference = () => {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme) {
+    document.body.classList.toggle("dark", savedTheme === "dark");
+  } else {
+    // Usa o tema do navegador se nada estiver salvo
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    document.body.classList.toggle("dark", prefersDark);
+  }
+
+  updateThemeIcon();
+};
+
+// Alterna entre dark e light
+const toggleTheme = () => {
+  const isDark = document.body.classList.toggle("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+  updateThemeIcon();
+};
+
+// Atualiza o ícone do botão
+const updateThemeIcon = () => {
+  const icon = themeToggleBtn.querySelector("i");
+  const isDark = document.body.classList.contains("dark");
+
+  icon.classList.toggle("fa-moon", !isDark); // ícone lua (claro)
+  icon.classList.toggle("fa-sun", isDark); // ícone sol (escuro)
 };
 
 // Eventos
@@ -154,5 +202,8 @@ suggestionButtons.forEach((btn) => {
   });
 });
 
+themeToggleBtn.addEventListener("click", toggleTheme);
+
 // Inicial
 showSuggestions();
+loadThemePreference();
