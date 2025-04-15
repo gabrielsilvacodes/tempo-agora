@@ -63,12 +63,6 @@ Aplicativo simples e elegante de previsão do tempo em tempo real. Digite o nome
 
 ---
 
-## 🖼️ Preview
-
-![Preview do app](./preview.gif)
-
----
-
 ## 🔗 Acesse o projeto online
 
 [https://gabrielsilvacodes.github.io/tempo-agora](https://gabrielsilvacodes.github.io/tempo-agora)
