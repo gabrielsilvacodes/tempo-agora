@@ -2,7 +2,8 @@
 
 Aplicativo simples e elegante de previsão do tempo em tempo real. Digite o nome de uma cidade e veja as condições climáticas atuais, incluindo temperatura, umidade, vento e uma imagem dinâmica da cidade como plano de fundo.
 
-![Capa do Projeto](./assets/capa.png)
+![Capa do Projeto](![capa-tempoagora](https://github.com/user-attachments/assets/337222e3-fe0f-436a-be4c-f09719ac1c07)
+)
 
 ---
 
